@@ -16,10 +16,10 @@ U nastavku je dan okviran popis vježbi. Izgledna su određena odstupanja obziro
 - [Lab 4: Deterministic encryption (ECB mode)](docs/ecb.md)
 - [Lab 5: Randomized encryption (CBC mode)](docs/cbc.md)
 - [Lab 6: A stream cipher based on a block cipher (CTR mode)](docs/ctr.md)
-- [Lab 7: Public key cryptography (RSA, Diffie-Hellman)](docs/asym.md)
+- [Lab 7: Public key cryptography (RSA, Diffie-Hellman)](docs/asymm.md)
 - [Lab 8: Merkle tree and Git](docs/merkle_tree_git.md)
 - [Lab 9: Authentication functions and end-2-end security](docs/auth_e2e.md)
-- [Lab 10: Certificates, TLS protocol and reverse proxy](docs/tlscerts.md)
+- [Lab 10: Certificates, TLS protocol and reverse proxy](docs/tls_certs.md)
 - [Lab 11: SSH protocol and tunneling](docs/ssh_tunneling.md)
 - [Lab 12: WebAuthn and passkeys](docs/webauthn.md)
 
