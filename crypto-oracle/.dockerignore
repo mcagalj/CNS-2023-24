@@ -1,0 +1,11 @@
+.gitignore
+.dockerignore
+__pycache__
+.pytest_cache
+python-venv
+.pre-commit-config.yaml
+Dockerfile
+.vscode
+.env
+students
+settings.yaml

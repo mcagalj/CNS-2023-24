@@ -1,0 +1,48 @@
+{% extends "layout2.html" %}
+
+{% block content %}
+<main class="flex flex-col items-center justify-center max-w-2xl mx-auto">
+    <h3 class="text-2xl mb-8 font-extrabold">Sign in or sign up</h3>
+    <p style="display: none;" class="font-extralight text-xl mx-auto text-red-500 text-center" id="info-board">
+        Your browser does not support Web Authentication PublicKeyCredential API.
+    </p>
+    <div class="max-w-sm" id="form-container">
+        <form class="w-full" id="registration-form">
+            <div class="mb-4">
+                <input
+                    class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500 required"
+                    id="email" name="email" type="email" autocomplete="email" placeholder="Email">
+                <button
+                    class="shadow bg-purple-500 hover:bg-purple-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 mt-4 px-4 rounded w-full"
+                    type="submit">
+                    Sign Up
+                </button>
+            </div>
+        </form>
+        <section class="flex items-center w-full my-8">
+            <div class="border border-neutral-300 w-full"></div>
+            <div class="mx-12">or</div>
+            <div class="border border-neutral-300 w-full"></div>
+        </section>
+        <form class="w-full" id="authentication-form">
+            <input class=" bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700
+            leading-tight focus:outline-none focus:bg-white focus:border-purple-500 required" name="email" type="email"
+                autocomplete="email webauthn" placeholder="Email" autocomplete="email webauthn" required autofocus>
+            <button
+                class="hover:bg-neutral-300 outline outline-1 outline-neutral-600 text-neutral-600 font-bold py-2 mt-4 px-4 rounded w-full flex items-center"
+                type="submit">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M15.75 5.25a3 3 0 0 1 3 3m3 0a6 6 0 0 1-7.029 5.912c-.563-.097-1.159.026-1.563.43L10.5 17.25H8.25v2.25H6v2.25H2.25v-2.818c0-.597.237-1.17.659-1.591l6.499-6.499c.404-.404.527-1 .43-1.563A6 6 0 1 1 21.75 8.25Z" />
+                </svg>
+                <div class="mr-4"></div>
+                Sign in with a passkey
+            </button>
+        </form>
+    </div>
+    <pre id="log"
+        class="bg-purple-50 appearance-none border-2 border-gray-200 rounded w-full min-h-[250px] max-h-[400px] mt-12 py-2 px-4 text-purple-600 leading-tight overflow-auto"></pre>
+    <script type="module" src="{{ url_for('static', path='webauthn_client.js') }}"></script>
+</main>
+{% endblock %}

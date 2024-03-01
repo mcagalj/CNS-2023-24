@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crypto labs</title>
+    <link rel="shortcut icon" href="{{ url_for('static', path='/favicon.png') }}">
+    <link href="{{ url_for('static', path='/styles.css') }}" rel="stylesheet">
+</head>
+
+<body class="text-slate-800 bg-neutral-100">
+    <div class="mx-auto py-8 w-4/6">
+        <h1 class="flex items-center pb-5 mb-10 border-b border-neutral-200 text-4xl">{{title}}</h1>
+        {% block content %}{% endblock %}
+    </div>
+    <script>
+        const url = new URL("/ws/{{client_id}}", location.href);
+        url.protocol = 'ws';
+        const ws = new WebSocket(url);
+        const messages = document.getElementById('messages')
+
+        ws.onmessage = async function (event) {
+            const [clientText, messageText] = event.data.split(':');
+            const isControlMessage = !messageText;
+            const controlMessageStyles = isControlMessage
+                ? 'max-w-fit py-2 px-3 mt-3 break-all rounded mx-auto bg-stone-200'
+                : 'max-w-fit py-2 px-3 mt-3 break-all rounded bg-white drop-shadow-md';
+            const message = createLi(controlMessageStyles);
+            let clientSpan = null;
+            let messageSpan = null;
+
+            if (clientText) {
+                clientSpan = createSpan(clientText, isControlMessage ? 'font-semibold text-stone-600' : `font-semibold ${await getColorForNickname(clientText)}`);
+                message.appendChild(clientSpan);
+            }
+
+            if (messageText) {
+                messageSpan = createSpan(messageText);
+                message.appendChild(messageSpan);
+            }
+
+            if (clientText || messageText) {
+                messages.append(message);
+                message.scrollIntoView()
+            }
+        };
+
+        function createSpan(text, classNames) {
+            const span = document.createElement('span');
+            const textNode = document.createTextNode(text);
+            span.appendChild(textNode);
+
+            if (classNames) {
+                classNames.split(' ').forEach(className => span.classList.add(className));
+            }
+
+            return span;
+        }
+
+        function createLi(classNames) {
+            const element = document.createElement('li');
+
+            if (classNames) {
+                classNames.split(' ').forEach(className => element.classList.add(className));
+            }
+
+            return element;
+        }
+
+        async function getColorForNickname(message) {
+            const match = message.match(/#(\w+)/);
+            console.log(match)
+
+            if (match) {
+                const nickname = match[1];
+
+                // Predefined set of colors
+                const colors = ["text-red-700", "text-orange-700", "text-amber-700", "text-yellow-700", "text-lime-700", "text-green-700", "text-emerald-700", "text-teal-700", "text-cyan-700", "text-sky-700", "text-blue-700", "text-indigo-700", "text-violet-700", "text-purple-700", "text-fuchsia-700", "text-pink-700", "text-rose-700", "text-stone-700"];
+
+                const colorIndex = await hashCode(nickname) % colors.length;
+
+                return colors[colorIndex];
+            }
+
+            return "text-stone-600";
+        }
+
+        async function hashCode(str) {
+            return arrayBufferToInt(await crypto.subtle.digest("SHA-1", new TextEncoder().encode(str)))
+        }
+
+        function arrayBufferToInt(buffer) {
+            const dataView = new DataView(buffer);
+            const intValue = dataView.getInt32(0, true);
+            return intValue >>> 0;
+        }
+
+    </script>
+</body>
+
+</html>

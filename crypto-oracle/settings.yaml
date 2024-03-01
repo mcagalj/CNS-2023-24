@@ -1,0 +1,46 @@
+app:
+  title: Crypto@FESB
+  username: barac_marin
+  jwt_algorithm: HS256
+  max_plaintext_size: 64
+  jwt_secret_key: LerhL6Xe7wj7oS/owDFBK0dN5eg2desGFbgfVjXH8QQ=
+  key_seed: FhJQ22cnlJLMHXME5xn9EeSzNV+gf6cF3zoMdCXEEsw=
+lab:
+  arp:
+    scope: arp
+    password: hoitextodo
+    cookie: ssooofeshametthe
+    challenge: Chuck Norris is currently suing myspace for taking the name of what
+      he calls everything around you.
+  ecb:
+    scope: ecb
+    password: aduledmand
+    cookie: itunisinymursede
+    challenge: When Bruce Banner gets mad, he turns into the Hulk. When the Hulk gets
+      mad, he turns into Chuck Norris.
+  cbc:
+    scope: cbc
+    iv_increment: 4
+    password: tongwltang
+    cookie: agnostic
+    challenge: Chuck Norris doesn't need an OS.
+  ctr:
+    scope: ctr
+    difficulty: 12
+    password: avimyallon
+    challenge: Chuck Norris once participated in the running of the bulls. He walked.
+  asymmetric:
+    scope: asymmetric
+    key_size: 2048
+    password: stlfthedan
+    challenge: When J. Robert Oppenheimer said "I am become death, the destroyer Of
+      worlds", He was not referring to the atomic bomb. He was referring to the Chuck
+      Norris halloween costume he was wearing.
+  vernam:
+    scope: vernam
+    password: fthouealea
+    key_size: 32
+    challenge: When Bruce Banner gets mad, he turns into the Hulk. When the Hulk gets
+      mad, he turns into Chuck Norris.
+  passkeys:
+    rp_name: Crypto Oracle - Passwordless
