@@ -40,7 +40,7 @@ Osobnom serveru pristupate na osnovu odgovarajuće IP adrese. S obzirom da se ad
 <em>List of student containers</em>
 </p>
 
-> NAPOMENA: [Upute za pokretanje _crypto oracle_ servera lokalno (npr. na svom osobnom računalu)](/crypto-oracle/).
+> NAPOMENA: [Upute za pokretanje _crypto oracle_ servera lokalno (npr. na svom osobnom računalu)](/crypto-oracle/README.md).
 
 ## Pohrana rješenja
 
