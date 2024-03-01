@@ -34,13 +34,13 @@ Za svakog studenta pokreće se personalizirana instanca _crypto oracle_ servera 
 
 Osobnom serveru pristupate na osnovu odgovarajuće IP adrese. S obzirom da se adrese dodjeljuju dinamički, podložne su promjenama. Trenutnu adresu svog servera možete doznati putem sljedećeg linka: **http://containersinfo.local**.
 
-
 <p align="center">
 <img src="../img/containersinfo.png" alt="List of running containers and theis IP addresses" width="600px" height="auto"/>
 <br>
 <em>List of student containers</em>
 </p>
-<br/>
+
+> NAPOMENA: [Upute za pokretanje _crypto oracle_ servera lokalno (npr. na svom osobnom računalu)](/crypto-oracle/).
 
 ## Pohrana rješenja
 
