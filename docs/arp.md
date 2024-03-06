@@ -42,7 +42,7 @@ Računalo `arp_client` periodično se logira na _crypto oracle_ server i zatraž
 <img src="../img/arpspoof_active.png" width="500px" height="auto"/>
 </p>
 
-Za izvođenje ovog napada, student će koristiti specijalizirano napadačko računalo koje u nazivu ima sufiks `_arpspoof`.
+Za izvođenje napada koristite specijalizirano napadačko računalo koje u nazivu ima sufiks `_arpspoof`.
 
 1. Otvorite dva (2) _remote_ terminala na svom napadačkom računalu:
 
@@ -88,7 +88,7 @@ Za izvođenje ovog napada, student će koristiti specijalizirano napadačko rač
     sudo tcpdump -vvAls0 | grep "password"
     ```
 
-    Pohranite token i prekinite napad (`Ctrl + C`).
+    Pohranite `password` i prekinite napad (`Ctrl + C`).
 
 ### Dohvatite `token`
 
@@ -118,4 +118,4 @@ Potrebno pohraniti:
 
 1. Popunjenu tablicu sa `MAC` i `IP` adresama (`README.md`).
 2. Dekriptiran izazov (`README.md`).
-3. Python skriptu za dekripciju izazova (`solution.py`).
+3. Python skriptu s pripadajućim kodom (`solution.py`).
