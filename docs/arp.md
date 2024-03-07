@@ -65,7 +65,7 @@ Za izvođenje napada koristite specijalizirano napadačko računalo koje u naziv
     sudo arpspoof
     ```
 
-    > VAŽNO: MitM napad izvršite na način da presretnete komunikaciju u smjeru od `arp_client`-a prema _crypto_oracle_ serveru; lažno se predstavite `arp_client`-u kao _crypto_oracle_.
+    > MitM napad izvršite na način da presretnete komunikaciju u smjeru od `arp_client`-a prema _crypto_oracle_ serveru; lažno se predstavite `arp_client`-u kao _crypto_oracle_.
 
 5. Nakon što ste pokrenuli napad, u prvom terminalu filtrirajte ARP pakete kako slijedi:
 
@@ -75,7 +75,7 @@ Za izvođenje napada koristite specijalizirano napadačko računalo koje u naziv
 
     Komentirajte rezultat.
 
-6. Popunite sljedeću tablicu podacima iz zaglavlja mrežnih paketa koje žrtva (_crypto_oracle_) šalje `arp_client` računalu:
+6. Popunite sljedeću tablicu podacima iz zaglavlja mrežnih paketa koje žrtva `arp_client` šalje _crypto_oracle_ serveru:
 
     |               | `MAC`<sub>src</sub> | `MAC`<sub>dst</sub> | `IP`<sub>src</sub> | `IP`<sub>dst</sub> |
     | :------------ | :------------------ | :------------------ | :----------------- | :----------------- |
