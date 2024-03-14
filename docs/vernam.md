@@ -14,9 +14,9 @@
 
 # Lab 3: A thin line between perfect cipher and insecure one
 
-Vidjeli smo već u uvodnim predavanjima da je moguće zaštiti povjerljivost podataka na način da proizvoljno jak napadač, bez obzira na dostupnu procesorsku snagu, ne može izvući/naučiti nikakve informacije iz enkriptiranih poruka. Ovakvo svojstvo šifri nazvali smo _perfect secrecy_. Primjer takve šifre je _one-time pad_. _One-time pad_ možemo realizirati primjenom _Vernamova algoritma_ tako da enkripcijski ključ biramo nasumično za svaku poruku te da je njegova duljina jednaka duljini poruke koja se enkriptira. Ovakav zahtjev na veličinu enkripcijskog ključa predstavlja ozbiljno praktično ograničenje.
+Vidjeli smo već u uvodnim predavanjima da je moguće zaštiti povjerljivost podataka na način da čak i jako napredni napadač, bez obzira na raspoloživu procesorsku snagu, ne može izvući ili naučiti nikakve informacije iz enkriptiranih poruka. Ovakvo svojstvo šifri nazvali smo _perfect secrecy_. Primjer takve šifre je _one-time pad_. _One-time pad_ možemo realizirati primjenom _Vernamova algoritma_ tako da enkripcijski ključ biramo nasumično za svaku poruku, te da je njegova duljina jednaka duljini poruke koja se enkriptira.
 
-U okviru vježbe vidjet ćemo posljedice zanemarivanja ovih zahtjeva, odnosno kako trivijano narušiti povjerljivost Vernamove šifre ako se ne pridržavamo zahtjeva na veličinu i način generiranja enkripcijskog ključa. Također ćemo se upoznati sa novom kategorijom napada, **_chosen-plaintext attack (CPA)_**.
+U okviru vježbe vidjet ćemo posljedice zanemarivanja ovih zahtjeva, odnosno kako trivijalno narušiti povjerljivost Vernamove šifre ako se ne pridržavamo zahtjeva za veličinu enkripcijskog ključa. Također ćemo se upoznati s novom kategorijom napada, **_chosen-plaintext attack (CPA)_**.
 
 ## Vernamova šifra na _crypo oracle_-u
 
@@ -61,13 +61,13 @@ Možete tražiti od _crypto oracle_-a enkripciju proizvoljne poruke. Zahtjev za 
 
 Student ima slobodu izabrati proizvoljnu poruku koju želi enkriptirati. _Crypto oracle_ će enkriptirati poruku primjenom Vernamove šifre, koristeći identičan ključ $K$ kao i za enkripciju _crypto_ izazova. Nakon što _crypto oracle_ izvrši enkripciju, vratit će odgovarajući _ciphertext_.
 
-> **DEFINICIJA**: U kontekstu ovog zadatka, napadač (vi) može tražiti od _crypto oracle_ servera enkripciju proizvoljnih poruka, što predstavlja oblik napada poznat kao _Chosen-Plaintext Attack (CPA)_.
+> **DEFINICIJA**: U kontekstu ovog zadatka, napadač (vi) može tražiti od _crypto oracle_ servera enkripciju proizvoljne poruke, što predstavlja oblik napada poznat kao _Chosen-Plaintext Attack (CPA)_.
 
 ### Dekriptirajte `challenge`
 
 Tekuća faza: `username & password` ⇒ `token` ⇒ **`challenge`**.
 
-Razmislite (olovka i papir) kako iskoristiti propust u načinu na koji se enkriptiraju `challenge` i vaše `plaintext` poruke, te implementirajte odgovarajući _chosen-plaintext attack_ s ciljem otkrivanja/dekripcije `challenge`-a.
+Razmislite (olovka i papir) kako iskoristiti propust u načinu na koji se enkriptiraju `challenge` i vaše `plaintext` poruke. Implementirajte odgovarajući _chosen-plaintext attack_ s ciljem otkrivanja/dekripcije `challenge`-a.
 
 ## Smjernice za automatizaciju u Pythonu
 
@@ -108,7 +108,7 @@ def xor_cipher(key: bytes, plaintext: bytes) -> bytes:
 
 ### Slanje autoriziranog HTTP zahtjeva
 
-U _chosen-plaintext_ napadu tražite od servera da enkriptira _plaintext_ po vešem izboru.
+U _chosen-plaintext_ napadu tražite od servera da enkriptira _plaintext_ po vašem izboru.
 
 ```python
 import requests
