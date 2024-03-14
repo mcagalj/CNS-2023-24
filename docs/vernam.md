@@ -113,7 +113,7 @@ U _chosen-plaintext_ napadu traÅ¾ite od servera da enkriptira _plaintext_ po vaÅ
 ```python
 import requests
 
-def encrypt_plaintext(plaintext: str, token: str, url: str) -> str:
+def encrypt_chosen_plaintext(plaintext: str, token: str, url: str) -> str:
     response = requests.post(
         url=url,
         headers={
