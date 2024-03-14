@@ -33,7 +33,7 @@ _Crypto oracle_ koristi Vernamovu šifru na sljedeći način:
    - Enkriptirana poruka (_ciphertext_): $C = C_1 C_2 ... C_n$.
 
     <p align="center">
-        <img src="../img/vernam_encryption.png" width="400px" height="auto"/>
+    <img src="../img/vernam_encryption.png" width="400px" height="auto"/>
     </p>
 
    > NAPOMENA: Zadnji blok poruke ($P_n$) može biti kraći od 32 bajta (256 bita). U tom slučaju, _crypto oracle_ uzima samo onoliko bajtova ključa $K$ koliko je potrebno za enkripciju zadnjeg bloka $P_n$.
