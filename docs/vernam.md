@@ -11,6 +11,7 @@
     - [Vernamova šifra](#vernamova-šifra)
     - [Slanje autoriziranog HTTP zahtjeva](#slanje-autoriziranog-http-zahtjeva)
     - [Dekodiranje `base64` stringa u `bytes`](#dekodiranje-base64-stringa-u-bytes)
+    - [Enkodiranje `plaintxt` stringa u `bytes`](#enkodiranje-plaintxt-stringa-u-bytes)
 
 # Lab 3: A thin line between perfect cipher and insecure one
 
@@ -146,4 +147,12 @@ def decode_base64_to_bytes(encoded_string: str) -> bytes:
 encoded_string = "VGhpcyBpcyBhIHN0cmluZw=="
 decoded_bytes = decode_base64_to_bytes(encoded_string)
 print(decoded_bytes)
+```
+
+### Enkodiranje `plaintxt` stringa u `bytes`
+
+```python
+plaintext = "my plaintext"
+plantext_as_bytes = plaintext.encode()
+print(plantext_as_bytes)
 ```
