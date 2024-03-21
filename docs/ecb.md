@@ -9,6 +9,7 @@
   - [Pohranite rješenje u GitLab repo](#pohranite-rješenje-u-gitlab-repo)
   - [Smjernice za automatizaciju u Pythonu](#smjernice-za-automatizaciju-u-pythonu)
     - [Spajanje stringova](#spajanje-stringova)
+    - [Množenje stringova](#množenje-stringova)
     - [Engleski alfabet](#engleski-alfabet)
 
 
@@ -103,6 +104,13 @@ Potrebno pohraniti:
 ```python
 user = "Jean" + "Doe"
 # output: "JeanDoe"
+```
+
+### Množenje stringova
+
+```python
+user = "a"*3
+# output: "aaa"
 ```
 
 ### Engleski alfabet
