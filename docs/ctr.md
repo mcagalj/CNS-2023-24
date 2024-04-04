@@ -45,7 +45,7 @@ U osnovi, utjecaj pseudo-slučajnog ključa (_key stream_ na slici) se poništi 
 
 Iskoristite kod iz prethodnih vježbi. Uvjerite se da je ova vježba u načelu slična vježbi s Vernamovom šifrom (Lab 3).
 
-> VAŽNO: Za razliku od prethodne vježbe (CBC), _chosen plaintext_ poruke koje šaljete _crypto oracle_ će se procesirati kao `utf-8` stringovi (ne trebate ih konvertirati u `hex`).
+> VAŽNO: Za razliku od prethodne vježbe (CBC), _chosen plaintext_ poruke koje šaljete _crypto oracle_ će se procesirati kao `utf-8` stringove (ne trebate ih konvertirati u `hex`).
 
 #### XOR-ing two large binary strings
 
