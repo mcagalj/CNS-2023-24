@@ -7,7 +7,7 @@
       - [Protecting against replay/delay attacks](#protecting-against-replaydelay-attacks)
       - [Protecting against message reordering attacks](#protecting-against-message-reordering-attacks)
   - [Password hashing](#password-hashing)
-  - [Creating JSON Web Token (JWT) using OpenSSL](#creating-json-web-token-jwt-using-openssl)
+  - [JSON Web Token (JWT)](#json-web-token-jwt)
   - [Deep dive into Git internals](#deep-dive-into-git-internals)
     - [Git objects](#git-objects)
     - [Useful commands](#useful-commands)
@@ -147,9 +147,9 @@ To manually create `sha512crypt` password hash please follow the following steps
      whoami
     ```
 
-## Creating JSON Web Token (JWT) using OpenSSL
+## JSON Web Token (JWT)
 
-To create a valid JSON Web Token (JWT) using OpenSSL with HMAC, you can follow these steps. JWTs typically consist of three parts: a header, a payload, and a signature. We will demonstrate how to create a JWT with HMAC-SHA256. 
+To create a valid JSON Web Token (JWT) using OpenSSL with HMAC, you can follow these steps. JWTs typically consist of three parts: a header, a payload, and a signature. We will demonstrate how to create a JWT with HMAC-SHA256.
 
 1. Prepare header and payload
 
