@@ -175,7 +175,18 @@ To create a valid JSON Web Token (JWT) using OpenSSL with HMAC, you can follow t
     echo "Secret Key: $SECRET_KEY"
     ```
 
-3. Assemble the JWT
+3. Create the Signature using HMAC-SHA256
+
+    ```bash
+    # Combine header and payload with dot separator
+    DATA_TO_SIGN="$BASE64_HEADER.$BASE64_PAYLOAD"
+
+    # Calculate HMAC-SHA256 signature using the secret key
+    SIGNATURE=$(echo -n "$DATA_TO_SIGN" | openssl dgst -binary -sha256 -hmac "$SECRET_KEY" | base64 | tr -d '=' | tr '/+' '_-' | tr -d '\n')
+    echo "JWT Signature: $SIGNATURE"
+    ```
+
+4. Assemble the JWT
 
     ```bash
     # Combine the base64-encoded header, payload, and signature into a valid JWT.
@@ -183,7 +194,7 @@ To create a valid JSON Web Token (JWT) using OpenSSL with HMAC, you can follow t
     echo "JWT: $JWT"
     ```
 
-4. Validate your JWT on https://jwt.io/
+5. Validate your JWT on https://jwt.io/
 
 ## Deep dive into Git internals
 
@@ -213,11 +224,8 @@ These objects form the core data structure of **Git's content-addressable databa
 #### Syncing content between directories 
 
 ```bash
-# Change to the directory /workspaces/merkle-tree
-cd /workspaces/merkle-tree
-
-# Sync objects from .my_git/objects to my_app/.git/objects/
-rsync -av .my_git/objects my_app/.git/objects/
+# Sync objects from .my_git/objects with my_app/.git/objects
+rsync -av .my_git/objects my_app/.git
 ```
 
 #### Viewing and displaying Git objects information 
